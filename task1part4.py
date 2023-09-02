@@ -10,16 +10,16 @@ def luhn(card):
         check+=sum(digits_of(i)*2) 
     return check % 10
 card=input("enter the card number\n")
-length=0
+length = len(card)
 visa= card
 mas= card
 ae= card
 while int(visa)>=10:
     visa=int(visa)/10
 while int(ae)>=10**13:
-    ae=int(ae)/10**13
+    ae=int(ae)//10**13
 while int(mas)>=10**14:
-    ae=int(mas)/10**14
+    mas=int(mas)//10**14
 
 if luhn(card)==0:
     if visa==4 and (length==13 or length==16):
